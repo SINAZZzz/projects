@@ -1,3 +1,8 @@
+//  Variables 
+var usernameInput = document.getElementById('username');
+var passwordInput = document.getElementById('password');
+var username = usernameInput.value;
+var password = passwordInput.value;
 var themes = [
     {
         background: "#1A1A2E",
@@ -30,8 +35,11 @@ var themes = [
         primaryColor: "#BB4430",
     },
 ];
-var setTheme = function (theme) {
-    var root = document.querySelector(":root");
+var root = document.querySelector(":root");
+var btnContainer = document.querySelector(".theme-btn-container");
+// function
+var setTheme;
+setTheme = function (theme) {
     if (root) {
         root.style.setProperty("--background", theme.background);
         root.style.setProperty("--color", theme.color);
@@ -41,8 +49,9 @@ var setTheme = function (theme) {
         }
     }
 };
-var displayThemeButtons = function () {
-    var btnContainer = document.querySelector(".theme-btn-container");
+// function
+var displayThemeButtons;
+displayThemeButtons = function () {
     if (btnContainer) {
         themes.forEach(function (theme) {
             var div = document.createElement("div");
@@ -54,15 +63,13 @@ var displayThemeButtons = function () {
     }
 };
 displayThemeButtons();
-function validateForm() {
-    var usernameInput = document.getElementById('username');
-    var passwordInput = document.getElementById('password');
-    var username = usernameInput.value;
-    var password = passwordInput.value;
+// function
+var validateForm;
+validateForm = function () {
     if (username === '' || password === '') {
         alert("Please fill in all fields");
         return false;
     }
     alert("welcome ".concat(username));
     return true;
-}
+};

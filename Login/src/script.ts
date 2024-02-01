@@ -1,3 +1,20 @@
+// type
+type Themes =  {
+    background: string;
+    color: string;
+    primaryColor: string;
+    glassColor?: string; 
+}
+
+type Input = string
+
+//  Variables 
+const usernameInput = document.getElementById('username') as HTMLInputElement;
+const passwordInput = document.getElementById('password') as HTMLInputElement;
+
+const username : Input = usernameInput.value;
+const password : Input = passwordInput.value;
+
 const themes: Array<{
     background: string;
     color: string;
@@ -35,16 +52,13 @@ const themes: Array<{
     },
 ];
 
-type Themes =  {
-    background: string;
-    color: string;
-    primaryColor: string;
-    glassColor?: string; 
-}
+const root = document.querySelector(":root") as HTMLElement | null;
+const btnContainer = document.querySelector(".theme-btn-container") as HTMLElement | null;
 
-const setTheme = (theme:Themes): void => {
-    const root = document.querySelector(":root") as HTMLElement | null;
+// function
+let setTheme : Function
 
+setTheme = (theme:Themes) => {
     if (root) {
         root.style.setProperty("--background", theme.background);
         root.style.setProperty("--color", theme.color);
@@ -56,9 +70,11 @@ const setTheme = (theme:Themes): void => {
     }
 };
 
-const displayThemeButtons = (): void => {
-    const btnContainer = document.querySelector(".theme-btn-container") as HTMLElement | null;
+// function
 
+let displayThemeButtons : Function;
+
+displayThemeButtons = () => {
     if (btnContainer) {
         themes.forEach((theme) => {
             const div = document.createElement("div");
@@ -72,13 +88,11 @@ const displayThemeButtons = (): void => {
 
 displayThemeButtons();
 
-function validateForm(): boolean {
-    const usernameInput = document.getElementById('username') as HTMLInputElement;
-    const passwordInput = document.getElementById('password') as HTMLInputElement;
+// function
 
-    const username = usernameInput.value;
-    const password = passwordInput.value;
+let validateForm:Function ;
 
+validateForm = () => {
     if (username === '' || password === '') {
         alert("Please fill in all fields")
         return false;
