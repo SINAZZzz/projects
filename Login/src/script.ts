@@ -71,3 +71,18 @@ const displayThemeButtons = (): void => {
 };
 
 displayThemeButtons();
+
+function validateForm(): boolean {
+    const usernameInput = document.getElementById('username') as HTMLInputElement;
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    if (username === '' || password === '') {
+        alert("Please fill in all fields")
+        return false;
+    }
+    alert(`welcome ${username}`)
+    return true;
+}

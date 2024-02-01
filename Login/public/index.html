@@ -7,18 +7,16 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<body>
     <section class="container">
         <div class="login-container">
             <div class="circle circle-one"></div>
             <div class="form-container">
                 <img src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png" alt="illustration" class="illustration" />
                 <h1 class="opacity">LOGIN</h1>
-                <form>
-                    <input type="text" placeholder="USERNAME" />
-                    <input type="password" placeholder="PASSWORD" />
-                    <button class="opacity">SUBMIT</button>
+                <form id="myForm" onsubmit="return validateForm()">
+                    <input type="text" id="username" placeholder="USERNAME" />
+                    <input type="password" id="password" placeholder="PASSWORD" />
+                    <button class="opacity" id="submit">SUBMIT</button>
                 </form>
                 <div class="register-forget opacity">
                     <a href="">REGISTER</a>
@@ -30,8 +28,5 @@
         <div class="theme-btn-container"></div>
     </section>
 </body>
-<!-- partial -->
   <script  src="../src/script.js"></script>
-
-</body>
 </html>
