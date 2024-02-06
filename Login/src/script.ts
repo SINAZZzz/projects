@@ -8,13 +8,6 @@ type Themes =  {
 
 type Input = string
 
-//  Variables 
-const usernameInput = document.getElementById('username') as HTMLInputElement;
-const passwordInput = document.getElementById('password') as HTMLInputElement;
-
-const username : Input = usernameInput.value;
-const password : Input = passwordInput.value;
-
 const themes: Array<{
     background: string;
     color: string;
@@ -88,15 +81,20 @@ displayThemeButtons = () => {
 
 displayThemeButtons();
 
-// function
 
-let validateForm:Function ;
+let validateForm: Function;
 
 validateForm = () => {
+    const usernameInput = document.getElementById('username') as HTMLInputElement;
+    const passwordInput = document.getElementById('password') as HTMLInputElement;
+    
+    const username: Input = usernameInput.value;
+    const password: Input = passwordInput.value;
+
     if (username === '' || password === '') {
         alert("Please fill in all fields")
         return false;
     }
-    alert(`welcome ${username}`)
+    alert(`Welcome ${username}`)
     return true;
 }

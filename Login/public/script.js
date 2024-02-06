@@ -1,8 +1,4 @@
-//  Variables 
-var usernameInput = document.getElementById('username');
-var passwordInput = document.getElementById('password');
-var username = usernameInput.value;
-var password = passwordInput.value;
+"use strict";
 var themes = [
     {
         background: "#1A1A2E",
@@ -63,13 +59,16 @@ displayThemeButtons = function () {
     }
 };
 displayThemeButtons();
-// function
 var validateForm;
 validateForm = function () {
+    var usernameInput = document.getElementById('username');
+    var passwordInput = document.getElementById('password');
+    var username = usernameInput.value;
+    var password = passwordInput.value;
     if (username === '' || password === '') {
         alert("Please fill in all fields");
         return false;
     }
-    alert("welcome ".concat(username));
+    alert("Welcome ".concat(username));
     return true;
 };

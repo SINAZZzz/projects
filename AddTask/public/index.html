@@ -7,8 +7,9 @@
     <title>Add Task</title>
 </head>
 <body>
-    <form method="get" class="form">
-        <div class="div-form">
+    <div class="div-form">
+
+    <form method="get" class="form" onsubmit="return Submit()">
             <div>
                 <label for="username">Username : </label>
                 <input type="text" id="username" placeholder="username">
@@ -17,11 +18,12 @@
                 <label for="task">Task : </label>
                 <input type="text" id="task" placeholder="Task">
             </div>
-            <div>
-                <button>Submit</button>
-            </div>
-        </div>
     </form>
+    <div>
+        <button id="submit">Submit</button>
+    </div>
+</div>
+
 </body>
 <script src="./script.js"></script>
 </html>
