@@ -60,3 +60,21 @@ body{
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
     transform: scale(1.02);
 }
+
+.cardTask{
+    display: flex;
+    align-items: center;
+    height: 2rem;
+   margin: 2rem 0;
+   color:antiquewhite;
+   width: 100%;
+   outline: none;
+   background-color: #970d7e49;
+   border: none;
+   border-radius: 5px;
+   font-weight: 500;
+   letter-spacing: 0.8px;
+   font-size: 15px;
+   padding-left: 10px;
+   backdrop-filter: blur(15px);
+}

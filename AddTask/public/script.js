@@ -6,7 +6,7 @@ addButton = document.getElementById('submit');
 createElementOnClick = function (usernameValue, taskValue) {
     newDiv = document.createElement('div');
     newDiv.textContent = "username :  ".concat(usernameValue, " >>> task : ").concat(taskValue, " ");
-    newDiv.style.color = 'red';
+    newDiv.className = 'cardTask';
     document.body.appendChild(newDiv);
     usernameInput.value = '';
     taskInput.value = '';

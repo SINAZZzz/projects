@@ -9,7 +9,7 @@ addButton = document.getElementById('submit');
 createElementOnClick = (usernameValue: string, taskValue: string): void =>{
     newDiv = document.createElement('div');
     newDiv.textContent = `username :  ${usernameValue} >>> task : ${taskValue} `;
-    newDiv.style.color = 'red';
+    newDiv.className = 'cardTask';
     document.body.appendChild(newDiv);
 
     usernameInput.value = '';
