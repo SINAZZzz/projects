@@ -5,12 +5,12 @@
 
 ## Current projects
 
-> d
+>  Html / Css / ts 
+
 
 <b>
 <i>Login</i><br /> 
 </b>
->  Html / Css / ts <br />  <br />  
 <i>Add Task</i> <br />  
 > Html / Css / ts  <br />  <br />  
 <b>
