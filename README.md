@@ -6,7 +6,9 @@
 ## Current projects
 <b><i>Login</i><br /></b>
 >  Html / Css / ts  <br />
+
 <b><i>Add Task</i> <br /></b>
-> Html / Css / ts  <br />  
+> Html / Css / ts  <br />
+
 <b><i>Add Person</i><br /></b>
 > Html / Css / ts  <br />
