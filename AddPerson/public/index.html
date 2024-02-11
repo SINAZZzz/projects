@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Add Person</title>
 </head>
 <body>
     <form method="post" id="myForm">
         <label for="fname">First Name: </label>
-        <input type="text" id="fname" name="fname"><br><br>
+        <input type="text" id="fname" class="input" name="fname"><br><br>
         <label for="lname">Last Name: </label>
-        <input type="text" id="lname" name="lname"><br><br>
+        <input type="text" id="lname" class="input" name="lname"><br><br>
         <label for="age">Age: </label>
-        <input type="number" id="age" name="age"><br><br>
+        <input type="number" id="age" class="input" name="age"><br><br>
         <label for="email">Email: </label>
-        <input type="email" id="email" name="email"><br><br>
+        <input type="email" id="email" class="input" name="email"><br><br>
         <label for="telephone">Telephone : </label>
-        <input type="tel" id="telephone" name="telephone"><br><br>
-        <button type="button" onclick="validateForm()">Add Person</button>
-
+        <input type="tel" id="telephone" class="input" name="telephone"><br><br>
+        <button type="button" class="button" onclick="validateForm()">Add Person</button>
     </form>
 </body>
 <script src="./script.js"></script>

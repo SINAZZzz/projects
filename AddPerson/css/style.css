@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 2rem;
+    background-color: rgba(0, 0, 0, 0.871);
+    color: darkgrey;
+}
+
+#myForm{
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0px;
+}
+
+#myForm label {
+    font-size: larger;
+    font-family: fantasy;
+}
+
+.input{
+    outline: none;
+    border: none;
+    font-family: fantasy;
+    width: 20%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: darkcyan;
+    padding-left: 10px;
+}
+
+.button{
+    outline: none;
+    border: none;
+    font-family: fantasy;
+    width: 20%;
+    font-size: larger;
+    height: 30px;
+    border-radius: 10px;
+    background-color: darkcyan;
+}
