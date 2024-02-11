@@ -5,10 +5,10 @@
 
 ## Current projects
 <b>
-  <i>Login</i>
-  > Html / Css / ts 
-  <i>Add Task</i>
-  > Html / Css / ts 
-  <i>Add Person</i>
-  > Html / Css / ts 
+<i>Login</i><br />  
+> Html / Css / ts <br />  
+<i>Add Task</i> <br />  
+> Html / Css / ts  <br />  
+<i>Add Person</i> <br />  
+> Html / Css / ts  <br />  
 </b>
