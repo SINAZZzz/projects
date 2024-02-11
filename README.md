@@ -8,7 +8,7 @@
 <b>
 <i>Login</i><br /> 
 </b>
-> Html / Css / ts <br />  <br />  
+>  Html / Css / ts <br />  <br />  
 <i>Add Task</i> <br />  
 > Html / Css / ts  <br />  <br />  
 <b>
