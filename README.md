@@ -4,4 +4,11 @@
 
 
 ## Current projects
-<t>login</t>
+<b>
+  <i>Login</i>
+  > Html / Css / ts 
+  <i>Add Task</i>
+  > Html / Css / ts 
+  <i>Add Person</i>
+  > Html / Css / ts 
+</b>
