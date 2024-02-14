@@ -1,34 +1,8 @@
-// Interfaces
-interface FormElements {
-    fname: HTMLInputElement;
-    lname: HTMLInputElement;
-    age: HTMLInputElement;
-    email: HTMLInputElement;
-    telephone: HTMLInputElement;
-}
-
-interface AddPerson {
-    fname: string;
-    lname : string;
-    age: number;
-    email: string;
-    telephone: number;
-}
-
 // classes
-class Person {
-    constructor(
-        public fname:string ,
-        public lname:string ,
-        public age:number ,
-        private email: string ,
-        readonly telephone:number){}
+import { Person } from "./classes/Person.js";
+import { AddPerson } from "./interfaces/AddPerson.js";
+import { FormElements } from "./interfaces/FormElements.js";
 
-    show(){
-        return `Welcome user >>> ${this.fname} ${this.lname} your age : ${this.age} and email : ${this.email} 
-        and telephone : ${this.telephone} Good Person :))`;
-    }
-}
 // Functions
 const validateForm = () => {
     const form = document.getElementById('myForm') as HTMLFormElement;
@@ -61,3 +35,5 @@ const validateForm = () => {
         alert(newPerson.show())        
     }
 }
+
+document.getElementById("submit")?.addEventListener("click", validateForm);

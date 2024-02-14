@@ -1,18 +1,6 @@
-"use strict";
+var _a;
 // classes
-class Person {
-    constructor(fname, lname, age, email, telephone) {
-        this.fname = fname;
-        this.lname = lname;
-        this.age = age;
-        this.email = email;
-        this.telephone = telephone;
-    }
-    show() {
-        return `Welcome user >>> ${this.fname} ${this.lname} your age : ${this.age} and email : ${this.email} 
-        and telephone : ${this.telephone} Good Person :))`;
-    }
-}
+import { Person } from "./classes/Person.js";
 // Functions
 const validateForm = () => {
     const form = document.getElementById('myForm');
@@ -43,3 +31,4 @@ const validateForm = () => {
         alert(newPerson.show());
     }
 };
+(_a = document.getElementById("submit")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", validateForm);
