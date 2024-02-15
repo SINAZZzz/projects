@@ -5,7 +5,6 @@ type Themes =  {
     primaryColor: string;
     glassColor?: string; 
 }
-
 type Input = string
 
 const themes: Array<{
@@ -49,9 +48,8 @@ const root = document.querySelector(":root") as HTMLElement | null;
 const btnContainer = document.querySelector(".theme-btn-container") as HTMLElement | null;
 
 // function
-let setTheme : Function
 
-setTheme = (theme:Themes) => {
+const setTheme = (theme:Themes) => {
     if (root) {
         root.style.setProperty("--background", theme.background);
         root.style.setProperty("--color", theme.color);
@@ -65,9 +63,7 @@ setTheme = (theme:Themes) => {
 
 // function
 
-let displayThemeButtons : Function;
-
-displayThemeButtons = () => {
+const displayThemeButtons = () => {
     if (btnContainer) {
         themes.forEach((theme) => {
             const div = document.createElement("div");
@@ -82,9 +78,8 @@ displayThemeButtons = () => {
 displayThemeButtons();
 
 
-let validateForm: Function;
 
-validateForm = () => {
+const validateForm = () => {
     const usernameInput = document.getElementById('username') as HTMLInputElement;
     const passwordInput = document.getElementById('password') as HTMLInputElement;
     

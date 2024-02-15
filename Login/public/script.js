@@ -34,8 +34,7 @@ var themes = [
 var root = document.querySelector(":root");
 var btnContainer = document.querySelector(".theme-btn-container");
 // function
-var setTheme;
-setTheme = function (theme) {
+var setTheme = function (theme) {
     if (root) {
         root.style.setProperty("--background", theme.background);
         root.style.setProperty("--color", theme.color);
@@ -46,8 +45,7 @@ setTheme = function (theme) {
     }
 };
 // function
-var displayThemeButtons;
-displayThemeButtons = function () {
+var displayThemeButtons = function () {
     if (btnContainer) {
         themes.forEach(function (theme) {
             var div = document.createElement("div");
@@ -59,8 +57,7 @@ displayThemeButtons = function () {
     }
 };
 displayThemeButtons();
-var validateForm;
-validateForm = function () {
+var validateForm = function () {
     var usernameInput = document.getElementById('username');
     var passwordInput = document.getElementById('password');
     var username = usernameInput.value;
