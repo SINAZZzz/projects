@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/output.css" rel="stylesheet">
+    <title>DashBoard</title>
+</head>
+<body class="flex h-screen bg-gray-100">
+        <aside class="bg-gray-800 text-gray-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+            <a href="https://github.com/SINAZZzz" class="text-white flex items-center justify-center">
+                <span class="font-semibold text-lg">Sina Zinsaz</span>
+            </a>
+    
+            <nav>
+                <a href="#dashboard" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="dashboard">Dashboard</a>
+                <a href="#analytics" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="analytics">Analytics</a>
+                <a href="#reports" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="reports">Reports</a>
+                <a href="#settings" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="settings">Settings</a>
+            </nav>
+        </aside>
+
+    <!-- Content -->
+    <div id="dashboard-content" class="content">
+        <h1>Dashboard Content</h1>
+        <p>This is the dashboard content.</p>
+    </div>
+    <div id="analytics-content" class="content">
+        <h1>Analytics Content</h1>
+        <p>This is the analytics content.</p>
+    </div>
+    <div id="reports-content" class="content">
+        <h1>Reports Content</h1>
+        <p>This is the reports content.</p>
+    </div>
+    <div id="settings-content" class="content">
+        <h1>Settings Content</h1>
+        <p>This is the settings content.</p>
+    </div>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
