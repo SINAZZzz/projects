@@ -12,3 +12,6 @@
 
 <b><i>Add Person</i><br /></b>
 > Html / Css / ts  <br />
+
+<b><i>Dashboard</i><br /></b>
+> Html / Css / ts / Tailwind <br />
