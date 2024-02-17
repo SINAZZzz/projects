@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const contents: NodeListOf<HTMLElement> = document.querySelectorAll('.content');
 
     // Hide all content except the default one
-    contents.forEach(function (content) {
-        if (!content.classList.contains('block')) {
-            content.style.display = 'none';
-        }
-    });
+    // contents.forEach(function (content) {
+    //     if (!content.classList.contains('block')) {
+    //         content.style.display = 'none';
+    //     }
+    // });
 
     navLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {

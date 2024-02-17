@@ -6,36 +6,45 @@
     <link href="../css/output.css" rel="stylesheet">
     <title>DashBoard</title>
 </head>
-<body class="flex h-screen bg-gray-100">
+<body class="flex w-full h-screen bg-gray-100">
         <aside class="bg-gray-800 text-gray-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
             <a href="https://github.com/SINAZZzz" class="text-white flex items-center justify-center">
                 <span class="font-semibold text-lg">Sina Zinsaz</span>
             </a>
     
             <nav>
-                <a href="#dashboard" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="dashboard">Dashboard</a>
-                <a href="#analytics" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="analytics">Analytics</a>
-                <a href="#reports" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="reports">Reports</a>
-                <a href="#settings" class="nav-link block py-2.5 px-4 hover:bg-gray-700 transition duration-200" data-target="settings">Settings</a>
+                <a href="#dashboard" class="nav-link nav-item" data-target="dashboard">Dashboard</a>
+                <a href="#addtask" class="nav-link nav-item" data-target="analytics">Add Task</a>
+                <a href="#addperson" class="nav-link nav-item" data-target="reports">Add Person</a>
             </nav>
         </aside>
 
     <!-- Content -->
-    <div id="dashboard-content" class="content">
-        <h1>Dashboard Content</h1>
-        <p>This is the dashboard content.</p>
-    </div>
-    <div id="analytics-content" class="content">
-        <h1>Analytics Content</h1>
-        <p>This is the analytics content.</p>
-    </div>
-    <div id="reports-content" class="content">
-        <h1>Reports Content</h1>
-        <p>This is the reports content.</p>
-    </div>
-    <div id="settings-content" class="content">
-        <h1>Settings Content</h1>
-        <p>This is the settings content.</p>
+    <div class="w-full h-full justify-center text-center ">
+        <!-- <div id="dashboard-content" class="content">
+            <h1>Dashboard Content</h1>
+            <p>This is the dashboard content.</p>
+        </div> -->
+        <div id="analytics-content" class="content ">
+            <h1 class="text-4xl font-bold">Add Task</h1>
+            <div class="flex justify-center items-center  h-[100vh] w-full">
+                <form method="get" class="form">
+                    <div>
+                        <label for="username" class="text-2xl font-bold">Username : </label>
+                        <input type="text" class="h-10 rounded-lg pl-2" id="username" placeholder="username">
+                    </div>
+                    <div>
+                        <label for="task" class="text-2xl font-bold">Task : </label>
+                        <input type="text" id="task" class="h-10 rounded-lg pl-2 mt-3" placeholder="Task">
+                    </div>
+                    <button id="submit" class="bg-violet-500 rounded-lg mt-3 h-10 w-20 text-white">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- <div id="reports-content" class="content">
+            <h1>Reports Content</h1>
+            <p>This is the reports content.</p>
+        </div> -->
     </div>
     <script type="module" src="./app.js"></script>
 </body>
