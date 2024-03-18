@@ -34,3 +34,36 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+const Username = document.getElementById('username') as HTMLInputElement;
+const Task = document.getElementById('task') as HTMLInputElement;
+const addButton = document.getElementById('submit') as HTMLButtonElement;
+
+const userValue: string = Username.value;
+const taskValue: string = Task.value;
+
+const Submit = () => {
+
+    if (userValue === '' || taskValue === '') {
+        alert("Error: Please fill in all fields");
+    } else {
+        alert(`${userValue} === ${taskValue}`)
+    }
+}
+
+if(addButton){
+        addButton.addEventListener('click', Submit);
+}
+
+const targetDiv: HTMLElement | null = document.getElementById('targetDiv');
+
+
+const createElementOnClick = (usernameValue: string, taskValue: string): void =>{
+    const newElement: HTMLDivElement = document.createElement('div');
+    newElement.textContent = `username :  ${usernameValue} >>> task : ${taskValue} `;
+    newElement.className = 'cardTask';
+    targetDiv.appendChild(newElement);
+
+    Username.value = '';
+    Task.value = '';
+}

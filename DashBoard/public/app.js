@@ -31,3 +31,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+var Username = document.getElementById('username');
+var Task = document.getElementById('task');
+var addButton = document.getElementById('submit');
+var userValue = Username.value;
+var taskValue = Task.value;
+var Submit = function () {
+    if (userValue === '' || taskValue === '') {
+        alert("Error: Please fill in all fields");
+    }
+    else {
+        alert("".concat(userValue, " === ").concat(taskValue));
+    }
+};
+if (addButton) {
+    addButton.addEventListener('click', Submit);
+}
+var targetDiv = document.getElementById('targetDiv');
+var createElementOnClick = function (usernameValue, taskValue) {
+    var newElement = document.createElement('div');
+    newElement.textContent = "username :  ".concat(usernameValue, " >>> task : ").concat(taskValue, " ");
+    newElement.className = 'cardTask';
+    targetDiv.appendChild(newElement);
+    Username.value = '';
+    Task.value = '';
+};
