@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   .nav-item {
     @apply block py-2.5 px-4 hover:bg-gray-700 transition duration-200;

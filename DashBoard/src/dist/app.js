@@ -1,4 +1,3 @@
-"use strict";
 var _a;
 (_a = document.getElementById('sidebar-toggle')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function () {
     var sidebar = document.querySelector('.sidebar');
@@ -40,7 +39,7 @@ var addButton = document.getElementById('submit');
 var createElementOnClick = function (usernameValue, taskValue) {
     var _a;
     var newDiv = document.createElement('div');
-    newDiv.innerHTML = "Username: ".concat(usernameValue, "<br>Task: ").concat(taskValue);
+    newDiv.innerHTML = "Username: " + usernameValue + "<br>Task: " + taskValue;
     newDiv.className = 'cardTask';
     (_a = document.getElementById('dashboard-content')) === null || _a === void 0 ? void 0 : _a.appendChild(newDiv);
     usernameInput.value = '';

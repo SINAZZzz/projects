@@ -13,7 +13,7 @@ createElementOnClick = (usernameValue: string, taskValue: string): void =>{
     document.body.appendChild(newDiv);
 
     usernameInput.value = '';
-    taskInput.value = '';
+    taskInput.value = ''; 
 }
 
 if (addButton) {

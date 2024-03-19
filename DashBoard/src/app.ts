@@ -9,12 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('.nav-link');
     const contents: NodeListOf<HTMLElement> = document.querySelectorAll('.content');
 
-    // Hide all content except the default one
-    // contents.forEach(function (content) {
-    //     if (!content.classList.contains('block')) {
-    //         content.style.display = 'none';
-    //     }
-    // });
+    contents.forEach(function (content) {
+        if (!content.classList.contains('dashboard')) {
+            content.style.display = 'none';
+        }
+    });
 
     navLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
@@ -33,37 +32,36 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    const dashboardContent: HTMLElement | null = document.getElementById('dashboard-content');
+    if (dashboardContent) {
+        dashboardContent.style.display = 'block';
+    }
 });
 
-const Username = document.getElementById('username') as HTMLInputElement;
-const Task = document.getElementById('task') as HTMLInputElement;
-const addButton = document.getElementById('submit') as HTMLButtonElement;
+const usernameInput: HTMLInputElement = document.getElementById('username') as HTMLInputElement;
+const taskInput: HTMLInputElement = document.getElementById('task') as HTMLInputElement;
+const addButton: HTMLElement | null = document.getElementById('submit');
 
-const userValue: string = Username.value;
-const taskValue: string = Task.value;
+const createElementOnClick = (usernameValue: string, taskValue: string): void => {
+    const newDiv: HTMLDivElement = document.createElement('div');
+    newDiv.innerHTML = `Username: ${usernameValue}<br>Task: ${taskValue}`;
+    newDiv.className = 'cardTask';
+    document.getElementById('dashboard-content')?.appendChild(newDiv);
 
-const Submit = () => {
-
-    if (userValue === '' || taskValue === '') {
-        alert("Error: Please fill in all fields");
-    } else {
-        alert(`${userValue} === ${taskValue}`)
-    }
+    usernameInput.value = '';
+    taskInput.value = '';
 }
 
-if(addButton){
-        addButton.addEventListener('click', Submit);
-}
+if (addButton) {
+    addButton.addEventListener('click', () => {
+        const usernameValue: string = usernameInput.value;
+        const taskValue: string = taskInput.value;
 
-const targetDiv: HTMLElement | null = document.getElementById('targetDiv');
-
-
-const createElementOnClick = (usernameValue: string, taskValue: string): void =>{
-    const newElement: HTMLDivElement = document.createElement('div');
-    newElement.textContent = `username :  ${usernameValue} >>> task : ${taskValue} `;
-    newElement.className = 'cardTask';
-    targetDiv.appendChild(newElement);
-
-    Username.value = '';
-    Task.value = '';
+        if (usernameValue === '' || taskValue === '') {
+            alert("Error: Please fill in all fields");
+        } else {
+            createElementOnClick(usernameValue, taskValue);
+        }
+    });
 }

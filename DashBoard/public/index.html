@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
     <title>DashBoard</title>
 </head>
 <body class="flex w-full h-screen bg-gray-100">
@@ -14,40 +15,33 @@
     
             <nav>
                 <a href="#dashboard" class="nav-link nav-item" data-target="dashboard">Dashboard</a>
-                <a href="#addtask" class="nav-link nav-item" data-target="analytics">Add Task</a>
+                <a href="#addtask" class="nav-link nav-item" data-target="addtask">Add Task</a>
                 <a href="#addperson" class="nav-link nav-item" data-target="reports">Add Person</a>
             </nav>
         </aside>
 
     <!-- Content -->
     <div class="w-full h-full justify-center text-center ">
-        <div id="targetDiv">
-            Click here to create a new element.
-          </div>
-        <!-- <div id="dashboard-content" class="content">
+         <div id="dashboard-content" class="content">
             <h1>Dashboard Content</h1>
             <p>This is the dashboard content.</p>
-        </div> -->
+        </div>
         <div id="addtask-content" class="content ">
             <h1 class="text-4xl font-bold">Add Task</h1>
-            <div class="flex justify-center items-center  h-[100vh] w-full">
-                <form method="get" class="form">
+            <div>
+                <form method="get" class="form" onsubmit="return Submit()">
                     <div>
                         <label for="username" class="text-2xl font-bold">Username : </label>
-                        <input type="text" class="h-10 rounded-lg pl-2" id="username" placeholder="username">
+                        <input type="text"  class="h-10 rounded-lg pl-2" id="username" placeholder="username">
                     </div>
                     <div>
                         <label for="task" class="text-2xl font-bold">Task : </label>
                         <input type="text" id="task" class="h-10 rounded-lg pl-2 mt-3" placeholder="Task">
                     </div>
-                    <button id="submit" class="bg-violet-500 rounded-lg mt-3 h-10 w-20 text-white">Submit</button>
                 </form>
             </div>
+            <button id="submit" class="bg-violet-500 rounded-lg mt-3 h-10 w-20 text-white">Submit</button>
         </div>
-        <!-- <div id="reports-content" class="content">
-            <h1>Reports Content</h1>
-            <p>This is the reports content.</p>
-        </div> -->
     </div>
     <script type="module" src="./app.js"></script>
 </body>
