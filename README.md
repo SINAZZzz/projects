@@ -15,3 +15,6 @@
 
 <b><i>Dashboard</i><br /></b>
 > Html / Css / ts / Tailwind <br />
+
+<b><i>Todo List</i><br /></b>
+> React / Redux / Ts <br />
