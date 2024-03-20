@@ -1,4 +1,4 @@
-var _a;
+var _a, _b;
 (_a = document.getElementById('sidebar-toggle')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function () {
     var sidebar = document.querySelector('.sidebar');
     if (sidebar) {
@@ -57,3 +57,48 @@ if (addButton) {
         }
     });
 }
+var Person = /** @class */ (function () {
+    function Person(fname, lname, age, email, telephone) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+        this.email = email;
+        this.telephone = telephone;
+    }
+    Person.prototype.show = function () {
+        return "Welcome user >>> " + this.fname + " " + this.lname + " your age : " + this.age + " and email : " + this.email + " \n        and telephone : " + this.telephone + " Good Person :))";
+    };
+    return Person;
+}());
+var validateForm = function () {
+    var form = document.getElementById('myForm');
+    var elements = {
+        fname: form.elements.namedItem('fname'),
+        lname: form.elements.namedItem('lname'),
+        age: form.elements.namedItem('age'),
+        email: form.elements.namedItem('email'),
+        telephone: form.elements.namedItem('telephone')
+    };
+    var person = {
+        fname: elements.fname.value.trim(),
+        lname: elements.lname.value.trim(),
+        age: parseInt(elements.age.value.trim(), 10),
+        email: elements.email.value.trim(),
+        telephone: parseInt(elements.telephone.value.trim(), 10)
+    };
+    if (person.fname === "" || person.lname === "" || isNaN(person.age) || person.email === "" || isNaN(person.telephone)) {
+        alert("Invalid");
+    }
+    else {
+        var newPerson = new Person(person.fname, person.lname, person.age, person.email, person.telephone);
+        var newDiv = document.createElement('div');
+        newDiv.innerHTML = newPerson.show();
+        newDiv.className = 'personDetails';
+        var dashboardContent = document.getElementById('dashboard-content');
+        if (dashboardContent) {
+            dashboardContent.appendChild(newDiv);
+        }
+        form.reset();
+    }
+};
+(_b = document.getElementById("add")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", validateForm);

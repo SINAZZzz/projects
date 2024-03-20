@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
 const usernameInput: HTMLInputElement = document.getElementById('username') as HTMLInputElement;
 const taskInput: HTMLInputElement = document.getElementById('task') as HTMLInputElement;
 const addButton: HTMLElement | null = document.getElementById('submit');
@@ -65,3 +66,78 @@ if (addButton) {
         }
     });
 }
+
+
+
+
+interface AddPerson {
+    fname: string;
+    lname : string;
+    age: number;
+    email: string;
+    telephone: number;
+}
+
+interface FormElements {
+    fname: HTMLInputElement;
+    lname: HTMLInputElement;
+    age: HTMLInputElement;
+    email: HTMLInputElement;
+    telephone: HTMLInputElement;
+}
+
+interface HasFormatter { 
+    show(): string ;
+}
+
+class Person implements  HasFormatter {
+    constructor(
+        public fname:string ,
+        public lname:string ,
+        public age:number ,
+        private email: string ,
+        readonly telephone:number){}
+
+    show(){
+        return `Welcome user >>> ${this.fname} ${this.lname} your age : ${this.age} and email : ${this.email} 
+        and telephone : ${this.telephone} Good Person :))`;
+    }
+}
+
+const validateForm = () => {
+    const form = document.getElementById('myForm') as HTMLFormElement;
+    const elements: FormElements = {
+        fname: form.elements.namedItem('fname') as HTMLInputElement,
+        lname : form.elements.namedItem('lname') as HTMLInputElement,
+        age: form.elements.namedItem('age') as HTMLInputElement,
+        email: form.elements.namedItem('email') as HTMLInputElement,
+        telephone: form.elements.namedItem('telephone') as HTMLInputElement
+    };
+
+    const person: AddPerson = {
+        fname: elements.fname.value.trim(),
+        lname: elements.lname.value.trim(),
+        age: parseInt(elements.age.value.trim(), 10),
+        email: elements.email.value.trim(),
+        telephone: parseInt(elements.telephone.value.trim(), 10),
+    };
+
+
+    if (person.fname === "" || person.lname === "" || isNaN(person.age) || person.email === "" || isNaN(person.telephone)) {
+        alert("Invalid");
+    } else {
+        const newPerson = new Person(person.fname , person.lname , person.age , person.email , person.telephone);
+       const newDiv: HTMLDivElement = document.createElement('div');
+       newDiv.innerHTML = newPerson.show(); 
+       newDiv.className = 'personDetails';
+
+       const dashboardContent: HTMLElement | null = document.getElementById('dashboard-content');
+       if (dashboardContent) {
+           dashboardContent.appendChild(newDiv);
+       }
+
+       form.reset();  
+    }
+}
+
+document.getElementById("add")?.addEventListener("click", validateForm);
