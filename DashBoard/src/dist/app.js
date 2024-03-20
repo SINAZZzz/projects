@@ -66,7 +66,7 @@ var Person = /** @class */ (function () {
         this.telephone = telephone;
     }
     Person.prototype.show = function () {
-        return "Welcome user >>> " + this.fname + " " + this.lname + " your age : " + this.age + " and email : " + this.email + " \n        and telephone : " + this.telephone + " Good Person :))";
+        return "Welcome user : " + this.fname + " " + this.lname + " <br> your age : " + this.age + " <br> email : " + this.email + " \n        <br> telephone : " + this.telephone + " <br> Good Person :))";
     };
     return Person;
 }());

@@ -99,8 +99,8 @@ class Person implements  HasFormatter {
         readonly telephone:number){}
 
     show(){
-        return `Welcome user >>> ${this.fname} ${this.lname} your age : ${this.age} and email : ${this.email} 
-        and telephone : ${this.telephone} Good Person :))`;
+        return `Welcome user : ${this.fname} ${this.lname} <br> your age : ${this.age} <br> email : ${this.email} 
+        <br> telephone : ${this.telephone} <br> Good Person :))`;
     }
 }
 

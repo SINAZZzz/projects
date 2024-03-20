@@ -67,7 +67,7 @@ var Person = /** @class */ (function () {
         this.telephone = telephone;
     }
     Person.prototype.show = function () {
-        return "Welcome user >>> ".concat(this.fname, " ").concat(this.lname, " your age : ").concat(this.age, " and email : ").concat(this.email, " \n        and telephone : ").concat(this.telephone, " Good Person :))");
+        return "Welcome user : ".concat(this.fname, " ").concat(this.lname, " <br> your age : ").concat(this.age, " <br> email : ").concat(this.email, " \n        <br> telephone : ").concat(this.telephone, " <br> Good Person :))");
     };
     return Person;
 }());
