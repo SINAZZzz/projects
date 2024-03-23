@@ -18,3 +18,6 @@
 
 <b><i>Todo List</i><br /></b>
 > React / Redux / Ts <br />
+
+<b><i>Form</i><br /></b>
+> React / useReducer / Ts  / Formic / Yup <br />
