@@ -1,3 +1,4 @@
+import { useReducer } from 'react';
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 
@@ -11,12 +12,49 @@ const initialValues = {
     password: string;
   }
 
+  interface State {
+    submitting: boolean;
+    success: boolean;
+    error: string | null;
+  }
+  
+  const initialState: State = {
+    submitting: false,
+    success: false,
+    error: null
+  };
+  
+  interface Action {
+    type: string;
+    payload?: string;
+  }
+
+  const formReducer = (state: State, action: Action): State => {
+    switch (action.type) {
+      case 'SUBMITTING':
+        return { ...state, submitting: true, success: false, error: null };
+      case 'SUCCESS':
+        return { ...state, submitting: false, success: true, error: null };
+      case 'FAILURE':
+        return { ...state, submitting: false, success: false, error: action.payload || 'Submission failed' };
+      default:
+        return state;
+    }
+  };
+
 export default function MyForm() {
+  const [state, dispatch] = useReducer(formReducer, initialState);
+
   const onSubmit = (values: FormValues, { setSubmitting }: FormikHelpers<FormValues>) => {
+    dispatch({ type: 'SUBMITTING' });
     setTimeout(() => {
-      alert(JSON.stringify(values, null, 2));
+      if (values.email !== '') {
+        dispatch({ type: 'SUCCESS' });
+      } else {
+        dispatch({ type: 'FAILURE' });
+      }
       setSubmitting(false);
-    }, 400);
+    }, 1000);
   };
 
   const validationSchema = Yup.object({
@@ -37,23 +75,25 @@ export default function MyForm() {
         onSubmit={onSubmit}>
           
     {({ isSubmitting }) => (
-         <Form>
-          <label htmlFor="name">name</label>
-          <Field type="name" name="name" />
-          <ErrorMessage name="name" component="div" />
-          <br />
-          <label htmlFor="email">email</label>
-           <Field type="email" name="email" />
-           <ErrorMessage name="email" component="div" />
-          <br />
-          <label htmlFor="password">password</label>
-           <Field type="password" name="password" />
-           <ErrorMessage name="password" component="div" />
-          <br />
-           <button type="submit" disabled={isSubmitting}>
-             Submit
-           </button>
-         </Form>
+          <Form>
+            <label htmlFor="name">name</label>
+            <Field type="text" name="name" />
+            <ErrorMessage name="name" component="div" />
+            <br />
+            <label htmlFor="email">email</label>
+            <Field type="email" name="email" />
+            <ErrorMessage name="email" component="div" />
+            <br />
+            <label htmlFor="password">password</label>
+            <Field type="password" name="password" />
+            <ErrorMessage name="password" component="div" />
+            <br />
+            <button type="submit" disabled={isSubmitting || state.submitting}>
+              {state.submitting ? 'Submitting...' : 'Submit'}
+            </button>
+            {state.success && <div>Form submitted successfully!</div>}
+            {state.error && <div>{state.error}</div>}
+          </Form>
        )}
         </Formik>
     </>
