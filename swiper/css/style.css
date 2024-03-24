@@ -1,80 +1,55 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    font-family: cursive;
-    box-sizing: border-box;
-}
-body{
-    height: 100vh;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.941)
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.div-form{
-    border: 3px  solid blueviolet;
-    padding: 1rem 35px;
+section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.div-form label{
-    color: white;
-    font-size: larger;
-    cursor: pointer;
-    margin-right: 20px;
+.swiper {
+  width: 100%;
+  height: 50%; 
 }
 
-.div-form input{
-   height: 2rem;
-   margin: 2rem 0;
-   color:#fff;
-   width: 100%;
-   outline: none;
-   background-color: #9191911f;
-   border: none;
-   border-radius: 5px;
-   font-weight: 500;
-   letter-spacing: 0.8px;
-   font-size: 15px;
-   padding-left: 10px;
-   backdrop-filter: blur(15px);
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 }
 
-.div-form button{
-    background-color: #b50dc11f;
-    color: #fff;
-    display: block;
-    padding: 13px;
-    border-radius: 5px;
-    outline: none;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    font-weight: bold;
-    width: 100%;
-    cursor: pointer;
-    margin-bottom: 2rem;
-    transition: all 0.1s ease-in-out;
-    border: none;
+
+.swiper-slide > img { 
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: center;
 }
 
-.div-form button:hover{
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-    transform: scale(1.02);
+.pagination_{
+  position: absolute;
+  width: calc(100% - 10%);
+}
+.pagination_ div[class^='swiper-button']::after{
+  display: none;
 }
 
-.cardTask{
-    display: flex;
-    align-items: center;
-    height: 2rem;
-   margin: 2rem 0;
-   color:antiquewhite;
-   width: 100%;
-   outline: none;
-   background-color: #970d7e49;
-   border: none;
-   border-radius: 5px;
-   font-weight: 500;
-   letter-spacing: 0.8px;
-   font-size: 15px;
-   padding-left: 10px;
-   backdrop-filter: blur(15px);
+.pagination_ div[class^='swiper-button']{
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgb(75 , 75 , 75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.pagination_ div[class^='swiper-button'] img{
+  width: 60%;
 }

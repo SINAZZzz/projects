@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Swiper</title>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 </head>
 <body>
-    
+    <section>
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="../img/beautiful-flower-night-mountain-moon-scenery-digital-art-hd-wallpaper-uhdpaper.com-607@1@k.jpg" alt="pic" /></div>
+            <div class="swiper-slide"><img src="../img/sunset-mountain-retrowave-scenery-digital-art-hd-wallpaper-uhdpaper.com-187@1@n.jpg" alt="pic" /></div>
+            <div class="swiper-slide"><img src="../img/beautiful-flower-night-mountain-moon-scenery-digital-art-hd-wallpaper-uhdpaper.com-607@1@k.jpg" alt="pic" /></div>
+            <div class="swiper-slide"><img src="../img/sunset-mountain-retrowave-scenery-digital-art-hd-wallpaper-uhdpaper.com-187@1@n.jpg" alt="pic" /></div>\
+            <div class="swiper-slide"><img src="../img/beautiful-flower-night-mountain-moon-scenery-digital-art-hd-wallpaper-uhdpaper.com-607@1@k.jpg" alt="pic" /></div>
+            <div class="swiper-slide"><img src="../img/sunset-mountain-retrowave-scenery-digital-art-hd-wallpaper-uhdpaper.com-187@1@n.jpg" alt="pic" /></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+        
+            <!-- If we need scrollbar -->
+            <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+        <div class="pagination_">
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev">
+                          <img src="../img/icons8-chevron-left-48.png" />
+                              
+                        </div>
+                        <div class="swiper-button-next">
+                            <img src="../img/icons8-chevron-right-48.png" />
+                          </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script type="module" src="./script.js"></script> -->  
+    <script>
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            spaceBetween: 10,
+            slidesPerView:1,
+            pagination: { 
+                el : ".swiper-pagination",
+                type : 'bullets',
+                clickable: true
+            },
+            navigation:{
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
+    </script>
 </body>
 </html>
