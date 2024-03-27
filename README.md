@@ -21,3 +21,6 @@
 
 <b><i>Form</i><br /></b>
 > React / useReducer / Ts  / Formic / Yup <br />
+
+<b><i>Swiper</i><br /></b>
+> Html / Css / Ts  / Swiper <br />
