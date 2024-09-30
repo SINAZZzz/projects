@@ -1,6 +1,6 @@
-## Project collection with typescript
+## A collection of projects
 
-<b> In this collection, we have various projects that are based on typescript. </b>
+<b> In this collection, we have different projects based on different languages, frameworks and packages. </b>
 
 
 ## Current projects
