@@ -13,3 +13,4 @@ In this collection, we have different projects based on various languages, frame
 | 📄 **Form** | React / useReducer / TypeScript / Formik / Yup | A dynamic form with validation and error handling. |
 | 🎡 **Swiper** | HTML / CSS / TypeScript / Swiper | A responsive image carousel using Swiper.js. |
 | ✍ **Blogify** | EJS / CSS | A blogging platform with a dynamic templating system. |
+| 💼 **Portfolio** | HTML / CSS | A responsive personal portfolio website showcasing projects and skills. |
