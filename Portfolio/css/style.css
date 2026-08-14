@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  background-color: #f8f7f1;
 }
 
 body {
@@ -11,9 +10,10 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  background-color: #f8f7f1;
 }
 
-.Head {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -38,7 +38,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.Menu {
+.menu {
   display: flex;
   gap: 80px;
   position: absolute;
@@ -49,16 +49,16 @@ body {
   font-weight: bold;
 }
 
-.Menu-select {
+.menu-item {
   position: relative;
   cursor: pointer;
 }
 
-.Menu-select:hover {
+.menu-item:hover {
   color: #2d5a27;
 }
 
-.Menu-select:hover::before {
+.menu-item:hover::before {
   content: "☾";
   position: absolute;
   right: 100%;
@@ -67,7 +67,7 @@ body {
   transform: translateY(-50%);
 }
 
-.Menu-select:hover::after {
+.menu-item:hover::after {
   content: "☽";
   position: absolute;
   left: 100%;
@@ -76,7 +76,7 @@ body {
   transform: translateY(-50%);
 }
 
-.Name {
+.name {
   color: #2d5a27;
   font-family: Arial, sans-serif;
   font-weight: bold;
@@ -88,20 +88,19 @@ span {
   font-size: 40px;
 }
 
-.contant {
+.content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin: 5rem 0rem; */
 }
 
-.Profile {
+.profile {
   position: relative;
   width: 400px;
   height: 400px;
 }
 
-.Profile-img {
+.profile-img {
   width: 400px;
   height: 400px;
   border-radius: 20%;
@@ -110,7 +109,7 @@ span {
   z-index: 2;
 }
 
-.text-contant {
+.text-content {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 18px;
@@ -118,36 +117,46 @@ span {
   direction: ltr;
 }
 
-.My-name {
+.my-name {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
   font-size: 52px;
 }
 
-.footer{
+.footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.creative{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+.creative {
+  font-family:
+    "Trebuchet MS",
+    "Lucida Sans Unicode",
+    "Lucida Grande",
+    "Lucida Sans",
+    Arial,
+    sans-serif;
   font-weight: bold;
   font-size: 40px;
 }
 
-.text-one{
+.creative-text {
   color: #a8e6cf;
   margin-right: 4rem;
 }
 
-.media{
+.zinsaz-text {
+  /* styles for Zinsaz */
+}
+
+.media {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
 }
 
-.media-icon{
+.media-icon {
   cursor: pointer;
 }
