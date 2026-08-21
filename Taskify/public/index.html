@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>TODO LIST</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">TODO LIST</h1>
+
+      <div class="action-bar">
+        <div class="search-container">
+          <input type="search" name="search" id="search" placeholder="Search note..." />
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+
+        <div class="select-wrapper">
+          <select name="filter" id="filter" class="filter-select">
+            <option value="all">ALL</option>
+            <option value="complete">Complete</option>
+            <option value="incomplete">Incomplete</option>
+          </select>
+          <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="theme-icon sun-icon hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="todo-list">
+        <div class="empty-state hidden" id="empty-state">
+          <svg class="empty-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350">
+            <path fill="#E0DFFF" class="empty-blob" d="M420,160C450,220 380,310 290,300C200,290 150,250 120,200C90,150 110,80 180,50C250,20 390,100 420,160Z" />
+            <g transform="translate(180, 40)">
+              <ellipse cx="60" cy="230" rx="90" ry="15" fill="#D0CEFF" />
+              <path d="M40 90 L20 200 L80 200 L70 90 Z" fill="#6C63FF" />
+              <path d="M40 90 L85 110 L95 160 L75 160 Z" fill="#5850E6" />
+              <path d="M25 90 C35 70 70 70 80 90 C60 100 40 100 25 90 Z" fill="#4B44C9" />
+              <rect x="35" y="195" width="12" height="30" fill="#252525" />
+              <rect x="60" y="195" width="12" height="30" fill="#252525" />
+              <path d="M25 225 C25 220 47 220 47 225 L47 228 L25 228 Z" fill="#6C63FF" />
+              <path d="M60 225 C60 220 82 220 82 225 L82 228 L60 228 Z" fill="#6C63FF" />
+              <circle cx="55" cy="55" r="16" fill="#FFC8A2" />
+              <path d="M35 50 C35 30 75 30 75 50 Z" fill="#6C63FF" />
+              <path d="M30 50 L80 50 L75 54 L35 54 Z" fill="#4B44C9" />
+              <path d="M65 110 L25 150" stroke="#FFC8A2" stroke-width="8" stroke-linecap="round" />
+              <circle cx="15" cy="160" r="18" fill="none" stroke="#6C63FF" stroke-width="5" />
+              <circle cx="15" cy="160" r="13" fill="rgba(255, 255, 255, 0.4)" />
+            </g>
+          </svg>
+          <p class="empty-text">Empty...</p>
+        </div>
+
+        <li class="todo-item">
+          <label class="checkbox-container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            <span class="todo-text">NOTE #1</span>
+          </label>
+          <div class="actions">
+            <button class="action-btn edit-btn" aria-label="Edit">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </button>
+            <button class="action-btn delete-btn" aria-label="Delete">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </li>
+
+        <li class="todo-item completed">
+          <label class="checkbox-container">
+            <input type="checkbox" checked />
+            <span class="checkmark"></span>
+            <span class="todo-text">NOTE #2</span>
+          </label>
+          <div class="actions">
+            <button class="action-btn edit-btn" aria-label="Edit">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </button>
+            <button class="action-btn delete-btn" aria-label="Delete">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </li>
+
+        <li class="todo-item">
+          <label class="checkbox-container">
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+            <span class="todo-text">NOTE #3</span>
+          </label>
+          <div class="actions">
+            <button class="action-btn edit-btn" aria-label="Edit">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </button>
+            <button class="action-btn delete-btn" aria-label="Delete">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </button>
+          </div>
+        </li>
+      </ul>
+
+      <button class="add-btn" aria-label="Add Note">+</button>
+    </div>
+
+    <div class="modal-overlay hidden" id="modal-overlay">
+      <div class="modal">
+        <h2 class="modal-title">NEW NOTE</h2>
+        <input type="text" class="modal-input" id="modal-input" placeholder="Input your note..." />
+        <div class="modal-actions">
+          <button class="btn btn-cancel" id="btn-cancel">CANCEL</button>
+          <button class="btn btn-apply" id="btn-apply">APPLY</button>
+        </div>
+      </div>
+    </div>
+
+    <button id="undo-btn" class="undo-toast hidden">
+      <div class="undo-timer">
+        <svg viewBox="0 0 36 36" class="circular-chart">
+          <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+          <path class="circle" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+        </svg>
+        <span id="undo-countdown">5</span>
+      </div>
+      <span class="undo-text">UNDO</span>
+      <svg class="undo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 14L4 9l5-5" />
+        <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11" />
+      </svg>
+    </button>
+
+    <script src="../src/script.js"></script>
+  </body>
+</html>
